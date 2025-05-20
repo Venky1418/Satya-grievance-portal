@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya's Bujji Board</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffe4ec;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: whitesmoke;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+    h1 {
+      color: #e91e63;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #444;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d81b60;
+    }
+    .submitted {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .gif {
+      width: 100px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Moonlight's Board</h1>
+    <form id="bujjiForm">
+      <label for="issue">What’s bothering you?</label>
+      <input type="text" id="issue" required placeholder="e.g., You forgot to call me!"><label for="mood">Your Mood</label>
+  <select id="mood" required>
+    <option value="">Choose your mood</option>
+    <option value="sad">Sad</option>
+    <option value="angry">Angry</option>
+    <option value="dramatic">Dramatic</option>
+    <option value="playful">Playful</option>
+    <option value="just_venting">Just Venting</option>
+  </select>
+
+  <label for="severity">Severity Level</label>
+  <select id="severity" required>
+    <option value="">Pick the level</option>
+    <option value="hug">A tight hug will do</option>
+    <option value="icecream">Bring me ice cream</option>
+    <option value="paragraph">Write me a love paragraph</option>
+    <option value="call_now">Call me NOW</option>
+    <option value="serious_talk">Mission Critical - Talk seriously</option>
+  </select>
+
+  <label for="response">Preferred Response</label>
+  <select id="response" required>
+    <option value="">Choose one</option>
+    <option value="poem">Write a poem for me</option>
+    <option value="voice_note">Send a voice note</option>
+    <option value="sing">Sing a song</option>
+    <option value="snack">Buy me my favorite snack</option>
+    <option value="listen">Just listen quietly</option>
+  </select>
+
+  <label for="finalWords">Any dramatic final words?</label>
+  <textarea id="finalWords" rows="3" placeholder="e.g., I'm drowning in sadness..."></textarea>
+
+  <button type="submit">Send Sadness to Heart</button>
+</form>
+
+<div id="confirmation" class="submitted" style="display:none;">
+  Grievance submitted! Love is under repair.
+  <img class="gif" src="https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif" alt="heart-repair">
+</div>
+
+  </div>  <script>
+    const form = document.getElementById("bujjiForm");
+    const confirmation = document.getElementById("confirmation");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      form.style.display = "none";
+      confirmation.style.display = "block";
+    });
+  </script></body>
+</html>
